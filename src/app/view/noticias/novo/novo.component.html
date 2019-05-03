@@ -1,0 +1,35 @@
+
+<div class="container">
+  <form [formGroup]="form" >
+    <mat-form-field >
+      <input matInput placeholder="Nome" formControlName="nome">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+        <mat-select placeholder="Assunto"  formControlName="assunto">
+            <mat-option  *ngFor="let item of assuntos" value="{{item.id}}">{{item.nome}}</mat-option>
+          </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput   (keypress)="validaNumero($event)" placeholder="Telefone"  formControlName="telefone" maxlength=10>
+     </mat-form-field>
+     <br>
+     <mat-form-field>
+        <input matInput   placeholder="Titulo"  formControlName="titulo" maxlength=30>
+     </mat-form-field>
+     <br>
+     <mat-form-field>
+        <textarea matInput placeholder="Mensagem"  formControlName="mensagem"></textarea>
+     </mat-form-field>
+    </form>
+
+
+  <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="cadastrar()">Enviar</button>
+
+</div>

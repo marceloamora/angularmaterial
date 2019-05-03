@@ -1,0 +1,11 @@
+
+<mat-grid-list cols="4" rowHeight="2:1">
+  <mat-grid-tile colspan="1" rowspan="1">
+   <app-esquerdo [noticiasEntrada]='noticias' (escolherEmitter)="exibirSelecionada($event)"></app-esquerdo>
+
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3" rowspan="1">
+    <app-conteudo [noticia]="umaNoticia" (noticiaEvento)="executarExcluir($event)"></app-conteudo>
+  </mat-grid-tile>
+
+</mat-grid-list>

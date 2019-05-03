@@ -1,0 +1,11 @@
+<div class="center">
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item  *ngFor="let item of itensMenu" routerLink="{{item.url}}" >{{item.nome}} </button>
+</mat-menu>
+</div>
+
+<router-outlet class="conteudo">
+
+
+</router-outlet>

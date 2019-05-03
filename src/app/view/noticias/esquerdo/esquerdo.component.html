@@ -1,0 +1,14 @@
+
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let item of noticiasEntrada">
+    <a style="cursor: pointer;"  (click)="onSelecionar(item)">
+
+    {{item.titulo}}
+     <br/>
+    {{item.data | date:'HH:mm'}}
+
+</a>
+
+  </mat-list-item>
+
+</mat-list>
