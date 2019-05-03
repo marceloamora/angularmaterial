@@ -13,6 +13,7 @@ export class NovoComponent implements OnInit {
   public static   TelefoneCelularComDDD = [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/];
   assuntos:AssuntoTO[]= [];
   form:FormGroup;
+  tamanhoMaximo:number = 500;
   constructor(
     private noticiasService:NoticiasService,
     private fb:FormBuilder
@@ -21,6 +22,16 @@ export class NovoComponent implements OnInit {
   ngOnInit() {
     this.iniciarForm();
     this.carregarCombos();
+
+  }
+
+  getQuantidade():number{
+    let mensagem = this.form.get("mensagem").value;
+    if(mensagem){
+      return mensagem.length;
+    }else{
+      return 0;
+    }
 
   }
 

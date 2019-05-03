@@ -25,9 +25,13 @@
      </mat-form-field>
      <br>
      <mat-form-field>
-        <textarea matInput placeholder="Mensagem"  formControlName="mensagem"></textarea>
+        <textarea matInput placeholder="Mensagem" #valorTexto formControlName="mensagem"></textarea>
+         <p>{{getQuantidade()}} / {{tamanhoMaximo}}</p>
      </mat-form-field>
+
     </form>
+
+
 
 
   <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="cadastrar()">Enviar</button>
