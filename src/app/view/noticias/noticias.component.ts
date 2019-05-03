@@ -21,7 +21,12 @@ export class NoticiasComponent implements OnInit {
   executarExcluir(noticia:NoticiaTO){
    // console.log(noticia);
     this.noticiaService.remover(noticia.nome);
-    this.umaNoticia = this.noticiaService.getPrimeira();
+    console.log(this.noticiaService.listarNoticias().length);
+    if(this.noticiaService.listarNoticias().length==0){
+        this.umaNoticia=undefined;
+    }else{
+         this.umaNoticia = this.noticiaService.getPrimeira();
+    }
   }
 
   exibirSelecionada(noticia:NoticiaTO){
